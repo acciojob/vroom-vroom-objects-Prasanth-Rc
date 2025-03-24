@@ -9,7 +9,6 @@ Car.prototype.getMakeModel = function() {
 };
 
 function SportsCar(make, model, topSpeed) {
-    // Call the Car constructor to inherit make and model properties
     Car.call(this, make, model);
     this.topSpeed = topSpeed;
 }
@@ -18,9 +17,9 @@ SportsCar.prototype = Object.create(Car.prototype);
 
 SportsCar.prototype.constructor = SportsCar;
 
-function SportsCar(make, model, topSpeed) {
-	return this.topSpeed;
-}
+SportsCar.prototype.getTopSpeed = function () {
+    return this.topSpeed;
+};
 
 // Do not change the code below
 window.Car = Car;
